@@ -5,3 +5,259 @@
 //  ==========================================================================
 //  Themeatic Styles Below
 //  ==========================================================================
+	
+	.btn{
+		font-family: $gotham;
+		letter-spacing: 4px;
+		text-transform: uppercase;
+		font-size: 15px;
+		background: $basil;
+		color: white;
+		padding: 14px 25px;
+		display: inline-block;
+	}
+	
+	.btn--orange{
+		background: $orange;
+		&:hover{
+			background: darken($orange,10%);
+		}
+	}
+	
+	@media screen and (max-width:700px){
+		.btn{
+			font-size: 13px;
+			letter-spacing: 1px;
+		}
+	}
+	
+//  ==========================================================================
+//  Primary Nav
+//  ==========================================================================
+
+
+	.primary-nav{
+		background: white;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		z-index: 999;
+		max-height: 74px;
+	}
+	
+	.primary-nav > ul{
+		@extend .full-width;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+	}
+	
+	.primary-nav > ul li{
+		display: inline-block;
+		vertical-align: top;
+		min-width: 125px;
+		> a{
+			display: inline-block;
+			padding: 30px;
+			color: black;
+			text-transform: uppercase;
+			font: normal 13px $gotham;
+			@include box-sizing(border-box);
+			&:hover{
+				color: $orange;
+			}
+		}
+		&.primary-nav__logo{
+			> a{
+				padding: 0 30px;
+			}
+		}
+	}
+	
+	.primary-nav__mobile-toggle{
+		position: absolute;
+		right: 10px;
+		top: 14px;
+		color: $basil;
+		font-size: 40px;
+		background: white;
+		border: 1px solid #eee;
+		-webkit-appearance: none;
+		outline: none;
+		-moz-outline: none;
+		padding: 0 10px;
+		z-index: 999;
+		display: none;
+		visibility: hidden;
+		@include border-radius(0px);
+	}
+	
+	@media screen and (max-width:1100px){
+		.primary-nav > ul li {
+			min-width: 90px;
+			> a{
+				padding: 30px 10px;
+			}
+		}
+	}
+	
+	@media screen and (max-width:960px){
+		.primary-nav > ul li {
+			min-width: 90px;
+			> a{
+				padding: 30px 0px;
+			}
+			&.primary-nav__logo{
+				img{
+					width: 160px;
+					height: auto;
+				}
+				> a{
+					padding: 0 10px;
+				}
+			}
+		}		
+	}
+	
+	@media screen and (max-width:760px){
+		.primary-nav > ul li{
+			&.primary-nav__logo{
+				img{
+					width: 100px;
+					height: auto;
+				}
+			}
+		}
+	}
+	
+	
+	@media screen and (max-width:700px){
+		.primary-nav{
+			min-height: 80px;
+		}
+		.primary-nav > ul li{
+			&.primary-nav__logo{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+		}
+		.primary-nav > ul li:not(.primary-nav__logo){
+			float:left;
+			width: 100%;
+			position: relative;
+			display: block;
+			border-bottom: 1px solid #eee;
+			visibility: hidden;
+			display: none;
+			&:first-child{
+				margin-top: 110px;
+				border-top: 1px solid #eee;
+			}
+			> a{
+				padding: 15px 0;
+				width: 100%;
+				display: block;
+			}
+		}
+		.primary-nav > ul li.mobile-visible{
+			display: block;
+			visibility: visible;
+		}
+		.primary-nav__mobile-toggle{
+			display: block;
+			visibility: visible;
+			width: 55px;
+			text-align: center;
+			&.toggle-open{
+				.fa{
+					&::before{
+						content: '\f00d';
+					}
+				}
+			}
+		}
+	}
+	
+//  ==========================================================================
+//  Hero
+//  ==========================================================================
+
+
+	.hero{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		min-height: 611px;
+		height: 100%;
+		width: 100%;
+		max-height: 100%;
+		background: #4c4738;
+		background: image-url('tulley-hero-bg.jpg') center center no-repeat;
+		@include background-size(cover);
+	}
+	
+	.hero__cta{
+		background: rgba(white,.8);
+		padding: 40px 60px;
+		max-width: 600px;
+		display: inline-block;
+		margin: 200px 0 0 0;
+		@include box-sizing(border-box);
+	}
+	
+	@media screen and (max-width:700px){
+		.hero__cta{
+			margin: 60px 0 0;
+			width: 90%;
+			padding: 20px;
+		}
+		
+		.hero{
+			height: auto;
+			min-height: inherit;
+			.vertical-center{
+				position: relative;
+				display: block;
+				padding: 80px 0;
+				width: 100%;
+				float: left;
+				height: auto;
+				min-height: inherit;
+				.center{
+					float: left;
+					width: 100%;
+					display: block;
+				}
+			}
+		}
+	}
+	
+//  ==========================================================================
+//  Content HD
+//  ==========================================================================
+
+	.content-hd{
+		color: #500810;
+		padding-bottom: 49px;
+		text-transform: uppercase;
+		> * {
+			margin: 0;
+			padding: 0;
+		}
+	}
+	
+	.content-hd--tight{
+		padding-bottom: 20px;
+	}
+	
+	.content-bd,
+	.content-bd > p{
+		margin: 0;
+		padding: 0;
+		line-height: 26px;
+	}
+	
+	.content-bd + .content-bd {
+		padding-top: 24px;
+	}

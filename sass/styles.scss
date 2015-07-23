@@ -13,9 +13,10 @@
 //  ==========================================================================
 //  Base and Reset
 //  ==========================================================================
+	
+	@import "base/globals";
 	@import "base/base";
 	@import "base/normalize";
-	@import "base/globals";
 	
 //  ==========================================================================
 //  Vendor 
@@ -31,6 +32,9 @@
 	@import "modules/content/headings/headings";
 	@import "modules/content/headings/media-queries/headings-959";
 	@import "modules/content/headings/media-queries/headings-640";
+	
+	
+	@import "modules/utilities/utils";
 	
 //  ==========================================================================
 //  Modules should be super specific, however, in the case of simple thematic sites

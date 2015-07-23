@@ -29,9 +29,8 @@ Class                     | Size
 
 %hdg,
 .hdg{
-    font-family: $default-heading-family;
     font-weight: normal;
-    color: $default-text-color;
+    font-family: $sabon;
 }
 
 $heading-slug: hdg !default;
@@ -90,4 +89,8 @@ $heading-slug: hdg !default;
     @extend .hdg--5;
     font-size: #{map-get($h5map, fontSize) - 1};
     line-height: #{map-get($h5map, lineHeight) - 4};
+}
+
+.hdg--maroon{
+	color: $maroon;
 }

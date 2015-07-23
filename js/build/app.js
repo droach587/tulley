@@ -26,6 +26,18 @@ var mainJs = (function () {
 		        }
 		    }
 		}());
+		
+		var SELECTORS = {
+			MOBILE_TOGGLE: '.js-mobile-toggle',
+			MAIN_NAV: '.js-main-nav',
+			PRIMARY_NAV: '.primary-nav'
+		}
+		
+		var CLASSES ={
+			VISIBLE_NAV: 'mobile-visible'
+		}
+		
+		var mainNav = false;
  		
  		
  		/**
@@ -34,7 +46,27 @@ var mainJs = (function () {
  		 * 
  		 */
         function init() {
-            console.log('init pass on bp');
+            mobileToggle();
+        }
+        
+        function mobileToggle(){
+	        $(SELECTORS.MOBILE_TOGGLE).on('click', function(e){
+		        
+		        mainNav = !mainNav;
+		        if(mainNav){
+			        $(SELECTORS.MAIN_NAV).find('li').each(function(){
+				        $(this).addClass(CLASSES.VISIBLE_NAV);
+			        });
+			        $(SELECTORS.PRIMARY_NAV).css('max-height', 'inherit');
+			        $(this).addClass('toggle-open');
+		        }else{
+			        $(SELECTORS.MAIN_NAV).find('li').each(function(){
+				        $(this).removeClass(CLASSES.VISIBLE_NAV);
+			        });
+			        $(SELECTORS.PRIMARY_NAV).removeAttr('style');
+			        $(this).removeClass('toggle-open');
+		        }
+	        });
         }
  
  

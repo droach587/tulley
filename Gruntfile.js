@@ -37,8 +37,10 @@ module.exports = function(grunt) {
                     sassDir: 'sass',
                     cssDir: 'css',
                     outputStyle: 'compressed',
+                    imagesDir: "img",
                     imagesPath: "img",
                     generatedImagesDir: 'img',
+                    fontsDir: "css/fonts",
                     fontsPath: "css/fonts",
                     require: 'breakpoint',
                     sourcemap: true

@@ -1,0 +1,47 @@
+.flex-viewport{
+	overflow: visible !important;
+}
+
+.flex-contain{
+	width: 100%;
+	overflow: hidden;
+}
+
+.flexslider .slides > li{
+	@include box-sizing(border-box);
+	opacity: .7 !important;
+	position: relative;
+	&.flex-active-slide{
+		opacity: 1 !important;
+	}
+	&::after, &::before{
+		position: absolute;
+		top: 0px;
+		width: 10px;
+		content: '';
+		background: white;
+		height: 100%;
+	}
+	&::after{
+		left: 0px;
+	}
+	&::before{
+		right: 0px;
+	}
+}
+
+.flex-direction-nav a{
+	height: 52px;
+	color: white;
+	&::before{
+		color: rgba(white,1);
+	}
+}
+
+.flexslider:hover .flex-direction-nav .flex-prev{
+	left: 20px;
+}
+
+.flexslider:hover .flex-direction-nav .flex-next{
+	right: 20px;
+}

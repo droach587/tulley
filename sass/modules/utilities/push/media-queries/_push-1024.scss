@@ -1,0 +1,16 @@
+$push-slug: push !default;
+$push-1024: 'screen' max-width 1024px;
+
+@include breakpoint($push-1024){
+
+	@for $i from 1 through 10 {
+
+	    .#{$push-slug}--medium-#{$i+'0'}{
+	    	margin-top: #{($i+'0')+'px'};
+	    }
+	}
+
+	.push--medium-clear{
+        margin-top: 0px;
+    }
+}

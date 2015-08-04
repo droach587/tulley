@@ -1,0 +1,25 @@
+/*doc
+---
+title: Push
+name: Push
+category: Utilities 
+---
+
+
+Last Updated: 5/28/15 module: _push.scss
+*/
+
+$push-slug: push !default;
+
+@for $i from 0 through 10 {
+	
+	.#{$push-slug}--small-#{$i+'0'},
+    .#{$push-slug}--medium-#{$i+'0'}{
+    	margin-top: 0;
+    }
+
+    .#{$push-slug}--#{$i+'0'},
+    .#{$push-slug}--large-#{$i+'0'}{
+        margin-top: #{($i+'0')+'px'};
+    }
+}

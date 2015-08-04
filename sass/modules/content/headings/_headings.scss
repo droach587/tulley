@@ -94,3 +94,12 @@ $heading-slug: hdg !default;
 .hdg--maroon{
 	color: $maroon;
 }
+
+.hdg--grey{
+	color: $default-text-color;
+}
+
+.italic{
+	font-family: "Georgia", "Times", "Times New Roman", serif;
+	font-style: italic;
+}

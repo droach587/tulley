@@ -1,0 +1,16 @@
+$push-slug: push !default;
+
+@include breakpoint($global-640){
+
+	@for $i from 1 through 10 {
+
+	    .#{$push-slug}--small-#{$i+'0'}{
+	    	margin-top: #{($i+'0')+'px'};
+	    }
+	}
+	
+	.push--small-clear{
+        margin-top: 0px;
+    }
+}
+

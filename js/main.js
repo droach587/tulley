@@ -47,6 +47,7 @@ var mainJs = (function () {
  		 */
         function init() {
             mobileToggle();
+            flexSlider();
         }
         
         function mobileToggle(){
@@ -66,6 +67,14 @@ var mainJs = (function () {
 			        $(SELECTORS.PRIMARY_NAV).removeAttr('style');
 			        $(this).removeClass('toggle-open');
 		        }
+	        });
+        }
+        
+        function flexSlider(){
+	        $('.flexslider').flexslider({
+		        directionNav: true,
+		        controlNav: false,
+		        animation: 'slide'
 	        });
         }
  

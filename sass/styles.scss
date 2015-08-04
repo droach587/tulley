@@ -36,6 +36,10 @@
 	
 	@import "modules/utilities/utils";
 	
+	@import "modules/utilities/push/push";
+	@import "modules/utilities/push/media-queries/push-1024";
+	@import "modules/utilities/push/media-queries/push-640";
+
 //  ==========================================================================
 //  Modules should be super specific, however, in the case of simple thematic sites
 //  Just use one clean file 
@@ -46,6 +50,13 @@
 //  Responsive
 //  ==========================================================================
 	@import "media-queries/responsive";
+	
+//  ==========================================================================
+//  Vendor
+//  ==========================================================================
+
+	@import "vendor/woo/flexslider";
+	@import "vendor/woo/flex-overrides";
 
 //  ==========================================================================
 //  Print

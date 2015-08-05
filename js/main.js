@@ -30,7 +30,8 @@ var mainJs = (function () {
 		var SELECTORS = {
 			MOBILE_TOGGLE: '.js-mobile-toggle',
 			MAIN_NAV: '.js-main-nav',
-			PRIMARY_NAV: '.primary-nav'
+			PRIMARY_NAV: '.primary-nav',
+			NAV_JUMPS: '.js-main-nav li a'
 		}
 		
 		var CLASSES ={
@@ -48,6 +49,7 @@ var mainJs = (function () {
         function init() {
             mobileToggle();
             flexSlider();
+            jumpNav();
         }
         
         function mobileToggle(){
@@ -75,6 +77,22 @@ var mainJs = (function () {
 		        directionNav: true,
 		        controlNav: false,
 		        animation: 'slide'
+	        });
+        }
+        
+        function jumpNav(){
+	        $(SELECTORS.NAV_JUMPS).on('click', function(){
+		       var location = $(this).attr('href');
+				
+				if($(location).length > 0){		       
+			       $('html, body').stop().animate({
+				      scrollTop: $(location).offset().top - $(SELECTORS.MAIN_NAV).outerHeight()
+			       },500, function(){
+				       return false;
+			       });
+		       }else{
+			       return false;
+		       }
 	        });
         }
  

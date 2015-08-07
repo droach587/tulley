@@ -345,6 +345,10 @@
 		padding: 100px 0;
 	}
 	
+	.section--olive{
+		background: #f6f6f6;
+	}
+	
 	@media screen and (max-width:700px){
 		.section{
 			padding: 40px 20px;
@@ -425,6 +429,11 @@
 	
 	.section--leaves{
 		background: white image-url('leafy-bg.jpg') center center no-repeat;
+		@include background-size(cover);
+	}
+	
+	.section--leaves-dark{
+		background: white image-url('leafy-dark.jpg') center center no-repeat;
 		@include background-size(cover);
 	}
 	
